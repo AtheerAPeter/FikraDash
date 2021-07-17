@@ -1,0 +1,140 @@
+*,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  padding-top: 20px;
+  width: 1200px;
+  margin: auto;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    padding: 20px 20px 0 20px;
+  }
+}
+
+$main: #1876d1;
+$myGray: #dadada;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: #eee;
+  height: 100vh;
+  @include center;
+  .login-form {
+    width: 300px;
+    .submit-btn {
+      width: 100%;
+    }
+  }
+}
+
+.home-container {
+  height: 100vh;
+  nav {
+    height: 70px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 10px;
+        height: 40px;
+      }
+
+      .logo {
+        font-size: 30px;
+        font-weight: bold;
+        color: $main;
+      }
+    }
+    .avatar-wrapper {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      h1 {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.home-content {
+  height: calc(100vh - 70px);
+  @include center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  .card {
+    width: 350px;
+    height: 400px;
+    margin: 10px;
+    border: 1px solid $myGray;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    padding: 50px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      height: 500px;
+    }
+
+    img {
+      width: 80%;
+      height: 50%;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-top: 50px;
+      color: #3f3d56;
+    }
+  }
+}
+.table {
+  border: 1px solid $myGray;
+  padding: 10px;
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
